@@ -40,6 +40,3 @@ def data_processing(data: dict):
 
     else:
         raise InvalidYearCupError("there was no world cup this year")
-
-
-data_processing(data)
