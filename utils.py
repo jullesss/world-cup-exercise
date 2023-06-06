@@ -1,14 +1,6 @@
 from exceptions import NegativeTitlesError, InvalidYearCupError, ImpossibleTitlesError
 from datetime import datetime
 
-data = {
-    "name": "França",
-    "titles": 4,
-    "top_scorer": "Zidane",
-    "fifa_code": "FRA",
-    "first_cup": "2002-10-18",
-}
-
 
 def data_processing(data: dict):
     if data["titles"] < 0:
@@ -31,7 +23,6 @@ def data_processing(data: dict):
         total_cups = len(cup_years)
         index_this_cup = cup_years.index(sliced_data_sent)
         possible_cups = total_cups - index_this_cup - 1
-        print(possible_cups)
 
         if data["titles"] > possible_cups:
             raise ImpossibleTitlesError(
